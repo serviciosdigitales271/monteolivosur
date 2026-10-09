@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monteolivo Sur | Camposanto y Servicios Exequiales en Quito</title>
+  
+  <!-- Tipografías institucionales -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    :root {
+      --primary: #6EA830;        /* Verde claro institucional */
+      --primary-dark: #558624;   /* Verde complementario */
+      --accent-gold: #C0A150;    /* Dorado sutil */
+      --bg-cream: #FAF9F5;       /* Fondo crema neutro */
+      --bg-card: #FFFFFF;
+      --text-dark: #333333;
+      --text-muted: #666666;
+      --border-color: #E5E0D8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--bg-cream);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    h1, h2, h3, h4, .font-serif, .logo-title {
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    /* Top Bar 24/7 */
+    .top-bar {
+      background-color: var(--primary-dark);
+      color: #fff;
+      padding: 8px 16px;
+      font-size: 0.88rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 2px solid var(--primary);
+    }
+
+    .top-bar .emergency {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+    }
+
+    .top-bar .emergency .badge {
+      background-color: #d9534f;
+      color: white;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 1; }
+      50% { opacity: 0.6; }
+      100% { opacity: 1; }
+    }
+
+    .btn-top-call {
+      background-color: var(--primary);
+      color: #fff;
+      text-decoration: none;
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      transition: background 0.3s;
+    }
+
+    .btn-top-call:hover {
+      background-color: var(--primary-dark);
+    }
+
+    /* Navbar */
+    header {
+      background-color: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 37px;
+      z-index: 999;
+    }
+
+    .nav-container {
+      max-width: 1250px;
+      margin: 0 auto;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      text-decoration: none;
+    }
+
+    .logo-box {
+      border: 2px solid var(--accent-gold);
+      padding: 4px;
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+    }
+
+    .logo-box i {
+      color: var(--primary);
+      font-size: 1.8rem;
+    }
+
+    .logo-text-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo-subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.75rem;
+      letter-spacing: 5px;
+      color: var(--primary);
+      text-transform: uppercase;
+      margin-bottom: -2px;
+    }
+
+    .logo-title {
+      font-size: 1.6rem;
+      letter-spacing: 2px;
+      font-weight: 600;
+      color: var(--primary);
+      line-height: 1;
+      border-top: 1px solid var(--border-color);
+      padding-top: 3px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--primary);
+      font-size: 1.05rem;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary-dark);
+    }
+
+    .btn-contact {
+      background: var(--primary);
+      color: white !important;
+      padding: 8px 20px;
+      border-radius: 25px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      border: 1px solid var(--primary-dark);
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      min-height: 560px;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.35)), url('monteolivofrente_3.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 20px;
+      color: white;
+    }
+
+    .hero-card {
+      background-color: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(8px);
+      color: var(--text-dark);
+      max-width: 650px;
+      padding: 40px 35px;
+      border-radius: 16px;
+      border: 2px solid var(--primary);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+
+    .hero-card h2 {
+      color: var(--primary);
+      font-size: 2.3rem;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .hero-card p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      margin-bottom: 25px;
+      font-style: italic;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-hero-primary {
+      background-color: #25D366;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+      transition: transform 0.2s, background 0.3s;
+    }
+
+    .btn-hero-primary:hover {
+      transform: translateY(-2px);
+      background-color: #1ebc57;
+    }
+
+    .btn-hero-secondary {
+      background-color: var(--primary);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.3s;
+    }
+
+    .btn-hero-secondary:hover {
+      background-color: var(--primary-dark);
+    }
+
+    /* Section Global */
+    section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-title h2 {
+      color: var(--primary);
+      font-size: 2.4rem;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .section-divider {
+      width: 60px;
+      height: 3px;
+      background-color: var(--primary);
+      margin: 15px auto 0;
+    }
+
+    /* Grid Layouts */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border-radius: 12px;
+      padding: 25px;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+      transition: transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      border-color: var(--primary);
+    }
+
+    .card-icon {
+      width: 50px;
+      height: 50px;
+      background: var(--bg-cream);
+      color: var(--primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      border: 1px solid var(--primary);
+    }
+
+    .card h3 {
+      color: var(--primary-dark);
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+    }
+
+    /* Carrusel de 3 Imágenes */
+    .carousel-container-3 {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      border: 1px solid var(--border-color);
+    }
+
+    .carousel-track-3 {
+      display: flex;
+      width: 300%;
+      height: 100%;
+      animation: carouselSlide3 12s infinite ease-in-out;
+    }
+
+    .carousel-track-3 img {
+      width: 33.333%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @keyframes carouselSlide3 {
+      0%, 28% { transform: translateX(0%); }
+      33%, 61% { transform: translateX(-33.333%); }
+      66%, 94% { transform: translateX(-66.666%); }
+      100% { transform: translateX(0%); }
+    }
+
+    /* Carrusel de 2 Imágenes */
+    .carousel-container-2 {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      border: 1px solid var(--border-color);
+    }
+
+    .carousel-track-2 {
+      display: flex;
+      width: 200%;
+      height: 100%;
+      animation: carouselSlide2 8s infinite ease-in-out;
+    }
+
+    .carousel-track-2 img {
+      width: 50%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @keyframes carouselSlide2 {
+      0%, 42% { transform: translateX(0%); }
+      50%, 92% { transform: translateX(-50%); }
+      100% { transform: translateX(0%); }
+    }
+
+    .card ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 10px;
+    }
+
+    .card ul li {
+      padding: 6px 0;
+      border-bottom: 1px dashed var(--border-color);
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .card ul li i {
+      color: var(--primary);
+      font-size: 0.8rem;
+    }
+
+    /* Sección de Convenios con Logos IESS e ISSFA */
+    .convenios-section {
+      background-color: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 40px 30px;
+      margin: 40px auto;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    }
+
+    .convenios-section h3 {
+      color: var(--primary-dark);
+      font-size: 2.2rem;
+      margin-bottom: 25px;
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    .convenios-logos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .convenio-card {
+      background: var(--bg-cream);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 20px 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      width: 260px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    }
+
+    .convenio-card img {
+      height: 60px;
+      object-fit: contain;
+    }
+
+    .convenio-card span {
+      font-weight: 700;
+      color: var(--primary-dark);
+      font-size: 1.1rem;
+    }
+
+    /* CTA Section 24/7 */
+    .cta-banner {
+      background-color: var(--primary);
+      color: white;
+      border-radius: 16px;
+      padding: 40px 30px;
+      text-align: center;
+      margin: 40px auto;
+      box-shadow: 0 10px 30px rgba(110, 168, 48, 0.25);
+    }
+
+    .cta-banner h2 {
+      color: #fff;
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+    }
+
+    .cta-banner p {
+      color: #f0f7ea;
+      margin-bottom: 25px;
+      font-size: 1.1rem;
+    }
+
+    .phone-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,0.2);
+      border: 1px solid rgba(255,255,255,0.4);
+      padding: 10px 24px;
+      border-radius: 30px;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    /* Contact Form Section */
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      background: white;
+      padding: 40px;
+      border-radius: 16px;
+      border: 1px solid var(--border-color);
+    }
+
+    @media (max-width: 768px) {
+      .contact-container {
+        grid-template-columns: 1fr;
+      }
+      .nav-links {
+        display: none;
+      }
+      .convenios-logos {
+        gap: 20px;
+      }
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--primary-dark);
+    }
+
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      font-family: inherit;
+      background: var(--bg-cream);
+    }
+
+    .form-group input:focus, .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+
+    .btn-submit {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      width: 100%;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      font-size: 1rem;
+    }
+
+    .btn-submit:hover {
+      background: var(--primary-dark);
+    }
+
+    /* Floating WhatsApp Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background-color: #25D366;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      z-index: 1000;
+      text-decoration: none;
+      transition: transform 0.3s;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--primary-dark);
+      color: #E8F2E0;
+      padding: 40px 20px 20px;
+      border-top: 3px solid var(--primary);
+    }
+
+    .footer-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .footer-col h4 {
+      color: #fff;
+      margin-bottom: 15px;
+      font-size: 1.3rem;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 20px;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Emergency Bar -->
+  <div class="top-bar">
+    <div class="emergency">
+      <span class="badge">Atención Inmediata 24/7</span>
+      <span>Asesoramiento Exequial y Necesidad Inmediata</span>
+    </div>
+    <a href="tel:0967287360" class="btn-top-call"><i class="fas fa-phone"></i> 0967287360</a>
+  </div>
+
+  <!-- Header / Navbar -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="logo-container">
+        <div class="logo-box">
+          <i class="fas fa-church"></i>
+        </div>
+        <div class="logo-text-group">
+          <span class="logo-subtitle">CAMPOSANTO</span>
+          <span class="logo-title">MONTEOLIVO SUR</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#servicios">Servicios Exequiales</a></li>
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#convenios">Convenios</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="https://wa.me/593967287360?text=Hola,%20deseo%20asesoramiento%2024/7" target="_blank" class="btn-contact"><i class="fab fa-whatsapp"></i> Asesoría 24/7</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <div class="hero-card">
+      <h2>Camposanto Monteolivo Sur</h2>
+      <p>"En Monteolivo Sur, creemos que cada vida merece ser recordada con amor y respeto. Nuestro espacio está diseñado para honrar las memorias de quienes amamos."</p>
+      <div class="hero-actions">
+        <a href="https://wa.me/593967287360?text=Hola,%20necesito%20asistencia%20inmediata%2024/7" class="btn-hero-primary" target="_blank">
+          <i class="fab fa-whatsapp"></i> Asesoría Inmediata 24/7
+        </a>
+        <a href="tel:0967287360" class="btn-hero-secondary">
+          <i class="fas fa-phone-alt"></i> Llamar 0967287360
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Asesoría 24/7 Banner -->
+  <section id="asesoria">
+    <div class="cta-banner">
+      <h2>¿Enfrenta una emergencia o desea previsión familiar?</h2>
+      <p>Nuestro equipo de asesores está disponible las 24 horas del día, los 365 días del año para acompañarle con la calidez y el respeto que su familia merece.</p>
+      <div class="phone-badge">
+        <i class="fas fa-phone-volume"></i> 0967287360
+      </div>
+      <br>
+      <a href="https://wa.me/593967287360?text=Hola,%20solicito%20atencion%20personalizada%2024/7" class="btn-hero-primary" style="display:inline-flex;" target="_blank">
+        <i class="fab fa-whatsapp"></i> Contactar por WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <!-- Servicios Exequiales -->
+  <section id="servicios">
+    <div class="section-title">
+      <h2>Servicios Exequiales e Integrales</h2>
+      <p>Soluciones diseñadas para brindar tranquilidad y consuelo a su familia.</p>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="grid-3">
+      <!-- Planes Funerarios (Carrusel de 3) -->
+      <div class="card">
+        <div class="card-icon"><i class="fas fa-ribbon"></i></div>
+        <h3>Planes Funerarios</h3>
+        <div class="carousel-container-3">
+          <div class="carousel-track-3">
+            <img src="servicioreligioso.jpg" alt="Servicio Religioso">
+            <img src="musica.jpg" alt="Acompañamiento Musical">
+            <img src="capilla.jpg" alt="Capilla">
+          </div>
+        </div>
+        <ul>
+          <li><i class="fas fa-check"></i> Servicio Funerario Especial</li>
+          <li><i class="fas fa-check"></i> Servicio Funerario Premium</li>
+          <li><i class="fas fa-check"></i> Servicio Funerario VIP</li>
+          <li><i class="fas fa-check"></i> Trámites legales e inscripciones</li>
+        </ul>
+      </div>
+
+      <!-- Servicios de Cremación (Carrusel de 2) -->
+      <div class="card">
+        <div class="card-icon"><i class="fas fa-fire-alt"></i></div>
+        <h3>Servicios de Cremación</h3>
+        <div class="carousel-container-2">
+          <div class="carousel-track-2">
+            <img src="cremacion_1.jpg" alt="Cremación Urna 1">
+            <img src="cremacion_2.jpeg" alt="Cremación Arreglo Floral">
+          </div>
+        </div>
+        <ul>
+          <li><i class="fas fa-check"></i> Cremación + Traslado + Cofre en préstamo</li>
+          <li><i class="fas fa-check"></i> Cremación + Servicio Especial + Camposanto</li>
+          <li><i class="fas fa-check"></i> Cremación + Servicio Premium / VIP</li>
+        </ul>
+      </div>
+
+      <!-- Previsión Familiar (Carrusel de 2) -->
+      <div class="card">
+        <div class="card-icon"><i class="fas fa-hands-holding-heart"></i></div>
+        <h3>Previsión Familiar</h3>
+        <div class="carousel-container-2">
+          <div class="carousel-track-2">
+            <img src="prevision_1.jpg" alt="Previsión Familiar Grupo">
+            <img src="prevision_2.jpg" alt="Previsión Familiar Atardecer">
+          </div>
+        </div>
+        <ul>
+          <li><i class="fas fa-check"></i> Planificación y protección patrimonial</li>
+          <li><i class="fas fa-check"></i> Descuentos por previsión anticipada</li>
+          <li><i class="fas fa-check"></i> Asesoría legal y financiera 24/7</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Espacios y Productos -->
+  <section id="productos" style="background: var(--bg-cream);">
+    <div class="section-title">
+      <h2>Espacios de Memoria y Paz</h2>
+      <p>Un entorno de singular belleza rodeado de naturaleza en el sur de Quito.</p>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="grid-3">
+      <!-- Espacios en Jardín (Carrusel con jardin_1 y jardin_2) -->
+      <div class="card">
+        <div class="card-icon"><i class="fas fa-tree"></i></div>
+        <h3>Espacios en Jardín</h3>
+        <div class="carousel-container-2">
+          <div class="carousel-track-2">
+            <img src="jardin_1.jpg" alt="Jardín 1">
+            <img src="jardin_2.jpg" alt="Jardín 2">
+          </div>
+        </div>
+        <ul>
+          <li><i class="fas fa-leaf"></i> Espacio en Jardín Individual</li>
+          <li><i class="fas fa-leaf"></i> Espacio en Jardín Doble y Triple</li>
+          <li><i class="fas fa-leaf"></i> Jardín Triple con Osario Sextuple</li>
+          <li><i class="fas fa-leaf"></i> Parcela Familiar (6 cuerpos / 12 osarios)</li>
+        </ul>
+      </div>
+
+      <!-- Bóvedas y Columbarios (Carrusel de 2) -->
+      <div class="card">
+        <div class="card-icon"><i class="fas fa-archway"></i></div>
+        <h3>Bóvedas y Columbarios</h3>
+        <div class="carousel-container-2">
+          <div class="carousel-track-2">
+            <img src="bobedas_1.png" alt="Interior Columbarios">
+            <img src="bobedas_2.png" alt="Exterior Bóvedas">
+          </div>
+        </div>
+        <ul>
+          <li><i class="fas fa-place-of-worship"></i> Bóvedas de diseño exclusivo</li>
+          <li><i class="fas fa-place-of-worship"></i> Columbarios y Osarios</li>
+          <li><i class="fas fa-place-of-worship"></i> Osario triple en tierra</li>
+          <li><i class="fas fa-place-of-worship"></i> Mausoleo (12 nichos y 6 osarios)</li>
+        </ul>
+      </div>
+
+      <!-- Bosque Eterna Memoria (Carrusel con arboles_1.jpg y arboles_2.jpg) -->
+      <div class="card">
+        <div class="card-icon"><i class="fas fa-seedling"></i></div>
+        <h3>Bosque Eterna Memoria</h3>
+        <div class="carousel-container-2">
+          <div class="carousel-track-2">
+            <img src="arboles_1.jpg" alt="Bosque Árboles 1">
+            <img src="arboles_2.jpg" alt="Bosque Árboles 2">
+          </div>
+        </div>
+        <ul>
+          <li><i class="fas fa-tree"></i> Concepto ecológico e integrado</li>
+          <li><i class="fas fa-tree"></i> Homenaje en entorno natural nativo</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Convenios con Logos IESS e ISSFA -->
+  <section id="convenios">
+    <div class="convenios-section">
+      <h3>Convenios con:</h3>
+      <div class="convenios-logos">
+        <div class="convenio-card">
+          <img src="iess.jpg" alt="Logo IESS">
+          <span>IESS</span>
+        </div>
+        <div class="convenio-card">
+          <img src="issfa.jpg" alt="Logo ISSFA">
+          <span>ISSFA</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto / Asesoría -->
+  <section id="contacto">
+    <div class="section-title">
+      <h2>Solicite Asesoría Personalizada 24/7</h2>
+      <p>Déjenos sus datos o escríbanos directamente al WhatsApp.</p>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="contact-container">
+      <div>
+        <h3 style="color: var(--primary-dark); margin-bottom: 15px; font-size: 1.6rem;">Estamos para acompañarle</h3>
+        <p style="color: var(--text-muted); margin-bottom: 20px;">
+          Si requiere información inmediata por un fallecimiento o desea conocer nuestros planes de previsión familiar, contáctenos directamente.
+        </p>
+
+        <div style="margin-bottom: 15px; display: flex; align-items: center; gap: 12px;">
+          <i class="fas fa-phone-alt" style="color: var(--primary); font-size: 1.2rem;"></i>
+          <div>
+            <strong>Línea de Emergencia 24/7:</strong><br>
+            <a href="tel:0967287360" style="color: var(--primary-dark); font-weight: 700; text-decoration: none;">0967287360</a>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 15px; display: flex; align-items: center; gap: 12px;">
+          <i class="fas fa-map-marker-alt" style="color: var(--primary); font-size: 1.2rem;"></i>
+          <div>
+            <strong>Ubicación Principal:</strong><br>
+            Av. Simón Bolívar Km 7 1/2 (Diagonal a Ciudad Jardín), Quito.
+          </div>
+        </div>
+      </div>
+
+      <form onsubmit="sendToWhatsApp(event)">
+        <div class="form-group">
+          <label>Nombre Completo</label>
+          <input type="text" id="nombre" required placeholder="Ej. María López">
+        </div>
+
+        <div class="form-group">
+          <label>Teléfono de Contacto</label>
+          <input type="tel" id="telefono" required placeholder="Ej. 0991234567">
+        </div>
+
+        <div class="form-group">
+          <label>Tipo de Requerimiento</label>
+          <select id="servicio">
+            <option>Atención Inmediata (Emergencia 24/7)</option>
+            <option>Planes de Previsión Exequial</option>
+            <option>Espacios en Camposanto (Jardines/Bóvedas)</option>
+            <option>Servicios de Cremación</option>
+            <option>Información sobre Convenios (IESS / ISSFA)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Mensaje o Consulta</label>
+          <textarea id="mensaje" rows="3" placeholder="¿Cómo podemos ayudarle?"></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit">
+          <i class="fab fa-whatsapp"></i> Enviar a Asesor 24/7
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Botón Flotante WhatsApp -->
+  <a href="https://wa.me/593967287360?text=Hola,%20requiero%20asesoramiento%2024/7" class="whatsapp-float" target="_blank" title="Asesoría 24/7">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>MONTEOLIVO SUR</h4>
+        <p style="font-size: 0.85rem;">Generamos tranquilidad y confianza en la vida de las personas. Un tributo de amor eterno.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Oficinas y Sucursales</h4>
+        <p style="font-size: 0.85rem;">
+          • <strong>Principal:</strong> Av. Simón Bolívar Km 7 1/2<br>
+          • <strong>Guajaló:</strong> Av. Maldonado s22-173 y Taura<br>
+          • <strong>Agencia Sur:</strong> Rodrigo de Chávez Oe2-124
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Atención Directa</h4>
+        <p style="font-size: 0.85rem;">
+          Asesoría 24/7: <strong>0967287360</strong><br>
+          Quito, Ecuador
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; Camposanto Monteolivo Sur. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    function sendToWhatsApp(e) {
+      e.preventDefault();
+      const nombre = document.getElementById('nombre').value;
+      const telefono = document.getElementById('telefono').value;
+      const servicio = document.getElementById('servicio').value;
+      const mensaje = document.getElementById('mensaje').value;
+
+      const text = `*Solicitud de Asesoría Monteolivo Sur 24/7*%0A%0A` +
+                   `*Nombre:* ${nombre}%0A` +
+                   `*Teléfono:* ${telefono}%0A` +
+                   `*Interés:* ${servicio}%0A` +
+                   `*Mensaje:* ${mensaje}`;
+
+      window.open(`https://wa.me/593967287360?text=${text}`, '_blank');
+    }
+  </script>
+</body>
+</html>
